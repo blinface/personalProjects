@@ -1,4 +1,3 @@
-```C
 #include <cs50.h>
 #include <stdio.h>
 #include <ctype.h>
@@ -71,4 +70,4 @@ char rotate(char c, int key)
     }
 
 }
-```
+
