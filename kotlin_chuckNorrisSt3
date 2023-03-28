@@ -1,0 +1,46 @@
+package chucknorris
+
+fun main() {
+    println("Input string:")
+    val input = readln()
+    var binaryList = mutableListOf<String>()
+
+    for (element in input) {
+        binaryList.add(Integer.toBinaryString(element.code).padStart(7, '0'))
+    }
+
+    val bin = binaryList.joinToString("")
+    val arr = splitDistinct(bin.toCharArray())
+
+    println("The result:")
+    for (i in arr.indices) {
+        if (arr[i][0] == '1') {
+            print("0 ")
+            repeat (arr[i.toInt()].length) {
+                print("0")
+            }
+            print(" ")
+        } else if (arr[i][0] == '0') {
+            print("00 ")
+            repeat (arr[i.toInt()].length) {
+                print("0")
+            }
+            print(" ")
+        }
+    }
+
+//TODO
+    //add comments explaining code
+
+}
+
+//function to break down binary string grouped into elements of 0 and 1
+//will transform 1000011 -> [1, 0000, 11]
+fun splitDistinct(arr: CharArray): List<String> = arr
+        .fold(ArrayList<StringBuilder>()) { acc, ch -> acc.apply {
+            if (isEmpty() || last().last() != ch)
+                add(StringBuilder(ch.toString()))
+            else
+                last().append(ch)
+        }}
+        .map { it.toString() }
