@@ -1,3 +1,4 @@
+```kotlin
 package chucknorris
 
 fun main() {
@@ -44,3 +45,4 @@ fun splitDistinct(arr: CharArray): List<String> = arr
                 last().append(ch)
         }}
         .map { it.toString() }
+```
