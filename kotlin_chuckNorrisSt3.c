@@ -1,5 +1,5 @@
 package chucknorris
-
+```C
 fun main() {
     println("Input string:")
     val input = readln()
@@ -52,3 +52,4 @@ fun splitDistinct(arr: CharArray): List<String> = arr
                 last().append(ch)
         }}
         .map { it.toString() }
+```
