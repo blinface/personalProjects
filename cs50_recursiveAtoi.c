@@ -32,13 +32,19 @@ int convert(string input)
         return 1;
     }
 
+    // Finding index of last character in string
     int lastIndex = strlen(input) - 1;
+
+    // Converting the last character of string to int
     int lastChar = atoi(&input[lastIndex]);
 
+    // Remove the last character in string
     input[strlen(input) - 1] = '\0';
 
+    // Returning the int value of last char + 10 times value of shortened string
     return lastChar + (10 * atoi(input));
 
+    // Calling convert function recursively on the shortened string
     convert(input);
 
 }
